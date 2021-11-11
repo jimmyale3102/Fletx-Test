@@ -1,20 +1,25 @@
 package dev.alejo.fletxtest.app
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.xwray.groupie.ViewHolder
 import org.json.JSONObject
 
-class VehicleAdapter(private val vehicles: List<JSONObject>): RecyclerView.Adapter<VehicleViewHolder>() {
+class VehicleAdapter(
+    private val context: Context,
+    private val vehicles: List<JSONObject>
+    ): RecyclerView.Adapter<ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VehicleViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return VehicleViewHolder(layoutInflater.inflate(R.layout.item_vehicle, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            LayoutInflater.from(context).inflate(R.layout.item_vehicle, parent, false)
+        )
     }
 
-    override fun onBindViewHolder(holder: VehicleViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = vehicles[position]
-        holder.bind(item)
     }
 
     override fun getItemCount(): Int = vehicles.size
