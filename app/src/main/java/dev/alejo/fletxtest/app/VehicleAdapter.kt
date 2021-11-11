@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xwray.groupie.ViewHolder
-import org.json.JSONObject
 
 class VehicleAdapter(
     private val context: Context,
-    private val vehicles: List<JSONObject>
+    private val vehicles: List<HashMap<String, Any>>
     ): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

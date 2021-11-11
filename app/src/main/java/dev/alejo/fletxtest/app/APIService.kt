@@ -8,7 +8,7 @@ import retrofit2.http.Url
 interface APIService {
 
     @GET
-    fun getVehicles(
+    suspend fun getVehicles(
         @Header("Authorization") token: String,
         @Url url: String
     ): Response<VehicleResponse>

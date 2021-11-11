@@ -1,9 +1,10 @@
 package dev.alejo.fletxtest.app
 
-import org.json.JSONObject
+import com.google.gson.annotations.SerializedName
+import java.util.*
 
-class VehicleResponse(
-    val success: Boolean,
-    val message: String,
-    val data: List<JSONObject>,
+data class VehicleResponse(
+    @SerializedName("data") var data: List<HashMap<String, Any>>,
+    @SerializedName("message") val message: String,
+    @SerializedName("success") var success: Boolean
 )
