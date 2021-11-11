@@ -2,13 +2,19 @@ package dev.alejo.fletxtest.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var adapter: VehicleAdapter
+    private val vehicleList = mutableListOf<JSONObject>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +23,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-
+        adapter = VehicleAdapter(this, vehicleList)
+        trucks_recycler.layoutManager = LinearLayoutManager(this)
+        trucks_recycler.adapter = adapter
     }
 
     private fun getRetrofit() : Retrofit {
