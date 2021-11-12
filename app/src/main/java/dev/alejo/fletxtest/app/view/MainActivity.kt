@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initRecyclerView()
         vehicleViewModel.onCreate()
-        vehicleViewModel.responseModel.observe(this, Observer { allVehiclesData ->
+        vehicleViewModel.responseModel.observe(this, { allVehiclesData ->
             loading.visibility = View.GONE
             val vehiclesData = allVehiclesData?.data ?: emptyList()
             vehicleList.clear()
