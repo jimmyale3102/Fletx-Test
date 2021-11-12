@@ -42,6 +42,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
         val vehicleLocation = LatLng(latitude, longitude)
         map.addMarker(MarkerOptions().position(vehicleLocation).title("Vehículo: $plate"))
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(vehicleLocation, zoomLevel))
+        map.setInfoWindowAdapter(CustomMapInfoWindow(this))
     }
 
 }

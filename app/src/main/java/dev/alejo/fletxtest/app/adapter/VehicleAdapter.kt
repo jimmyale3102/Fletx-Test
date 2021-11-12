@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
 import com.google.gson.internal.LinkedTreeMap
 import com.xwray.groupie.ViewHolder
 import dev.alejo.fletxtest.app.R
+import dev.alejo.fletxtest.app.model.VehicleModel
+import dev.alejo.fletxtest.app.model.VehicleProvider
 import dev.alejo.fletxtest.app.view.LocationActivity
 import kotlinx.android.synthetic.main.item_vehicle.view.*
 
@@ -29,10 +31,10 @@ class VehicleAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = vehicles[position]
         Glide.with(context)
-            .load( (item["front_vehicle"] as LinkedTreeMap<*, *>)["url"].toString())
+            .load((item["front_vehicle"] as LinkedTreeMap<*, *>)["url"].toString())
             .into(holder.itemView.vehicle_picture)
         holder.itemView.plate.text = item["placa"].toString()
-        holder.itemView.driver_name.text = if(item.containsKey("driver")) {
+        val driverName = if(item.containsKey("driver")) {
             if(item["driver"] != null) {
                 (item["driver"] as LinkedTreeMap<*, *>)["full_name"].toString()
             } else {
@@ -41,7 +43,8 @@ class VehicleAdapter(
         } else {
             context.getString(R.string.no_driver)
         }
-        holder.itemView.trailer.text = if(item.containsKey("trailer")) {
+        holder.itemView.driver_name.text = driverName
+        val trailerPlate = if(item.containsKey("trailer")) {
             if(item["trailer"] != null) {
                 "${context.getString(R.string.trailer)} " +
                     (item["trailer"] as LinkedTreeMap<*, *>)["placa"].toString()
@@ -51,7 +54,15 @@ class VehicleAdapter(
         } else {
             context.getString(R.string.no_trailer)
         }
+        holder.itemView.trailer.text = trailerPlate
         holder.itemView.vehicle_content.setOnClickListener {
+            VehicleProvider.vehicleSelected = VehicleModel(
+                (item["front_vehicle"] as LinkedTreeMap<*, *>)["url"].toString(),
+                item["placa"].toString(),
+                driverName,
+                trailerPlate,
+                "Disponible"
+            )
             context.startActivity(Intent(context, LocationActivity::class.java).apply {
                 putExtra("plate", holder.itemView.plate.text.toString())
                 putExtra("lat", 4.7434159)

@@ -9,6 +9,7 @@
     <dimen name="margin_xx_large">64dp</dimen>
 
     <dimen name="vehicleItemHeight">140dp</dimen>
+    <dimen name="cardItemHeight">132dp</dimen>
     <dimen name="itemCornerRadius">8dp</dimen>
     <dimen name="pictureSize">132dp</dimen>
     <dimen name="strokeWidth">1dp</dimen>
