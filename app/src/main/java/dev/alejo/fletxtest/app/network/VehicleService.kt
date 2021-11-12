@@ -14,7 +14,7 @@ class VehicleService {
                 .create(APIService::class.java)
                 .getVehicles(
                     "Bearer ab11cb7605a030ee350d08f805057413",
-                    "people/holder_vehicles/2282.json"
+                    "people/holder_vehicles/1115.json"
                 )
             response.body()
         }
