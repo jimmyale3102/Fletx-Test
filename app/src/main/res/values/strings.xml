@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FletxTest</string>
+    <string name="no_driver">Sin conductor</string>
+    <string name="no_trailer">Sin trailer</string>
+    <string name="trailer">Trailer:</string>
 </resources>

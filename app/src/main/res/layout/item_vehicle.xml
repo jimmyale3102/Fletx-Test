@@ -10,9 +10,12 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_xs"
+        android:layout_marginBottom="@dimen/margin_xs"
         android:layout_marginStart="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_small"
+        android:clickable="true"
+        android:focusable="true"
         app:strokeColor="@color/borderColor"
         app:strokeWidth="@dimen/strokeWidth"
         app:cardBackgroundColor="@color/listBackgroundColor"
@@ -26,6 +29,7 @@
                 android:id="@+id/vehicle_picture"
                 android:layout_width="@dimen/pictureSize"
                 android:layout_height="@dimen/pictureSize"
+                android:scaleType="centerCrop"
                 app:shapeAppearanceOverlay="@style/shapeRounded"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -41,7 +45,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"
+                    android:textSize="22sp"
                     tools:text="TLP342"/>
 
                 <com.google.android.material.textview.MaterialTextView
@@ -49,9 +55,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:textColor="@color/textColor"
-                    android:textSize="10sp"
                     android:gravity="center_vertical"
+                    android:textColor="@color/textColor"
                     tools:text="TLP342"
                     tools:ignore="SmallSp" />
 
@@ -60,7 +65,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:textColor="@color/textColor"
+                    android:textSize="18sp"
                     tools:text="Trailer TLP342"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -69,9 +76,9 @@
                 android:id="@+id/availability"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_medium"
                 android:layout_alignParentEnd="true"
-                android:layout_margin="@dimen/margin_small"
-                android:textSize="10sp"
                 android:textColor="@color/textColor"
                 tools:text="Disponible"
                 tools:ignore="SmallSp" />
