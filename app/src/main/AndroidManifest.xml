@@ -22,7 +22,8 @@
         <activity
             android:name=".iu.LocationActivity"
             android:exported="true"
-            android:label="@string/title_activity_location" />
+            android:label="@string/title_activity_location"
+            android:parentActivityName=".iu.MainActivity"/>
         <activity
             android:name=".iu.MainActivity"
             android:exported="true" >

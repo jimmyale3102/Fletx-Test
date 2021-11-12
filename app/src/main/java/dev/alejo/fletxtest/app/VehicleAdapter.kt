@@ -54,6 +54,7 @@ class VehicleAdapter(
         }
         holder.itemView.vehicle_content.setOnClickListener {
             context.startActivity(Intent(context, LocationActivity::class.java).apply {
+                putExtra("plate", holder.itemView.plate.text.toString())
                 putExtra("lat", 4.7434159)
                 putExtra("lng", -74.2690526)
             })
