@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.internal.LinkedTreeMap
+import dev.alejo.fletxtest.app.extensions.toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -50,8 +51,8 @@ class MainActivity : AppCompatActivity() {
                 )
             val data = call.body()
             runOnUiThread {
+                loading.visibility = View.GONE
                 if(call.isSuccessful) {
-                    loading.visibility = View.GONE
                     val vehiclesData = data?.data ?: emptyList()
                     vehicleList.clear()
                     vehicleList.addAll(vehiclesData)
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showError() {
-
+        toast(R.string.loading_vehicles_error)
     }
 
 }

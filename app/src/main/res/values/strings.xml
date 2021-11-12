@@ -3,4 +3,5 @@
     <string name="no_driver">Sin conductor</string>
     <string name="no_trailer">Sin trailer</string>
     <string name="trailer">Trailer:</string>
+    <string name="loading_vehicles_error">Ha ocurrido un error</string>
 </resources>
