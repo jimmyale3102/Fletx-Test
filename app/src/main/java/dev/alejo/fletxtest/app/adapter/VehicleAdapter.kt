@@ -1,9 +1,8 @@
-package dev.alejo.fletxtest.app
+package dev.alejo.fletxtest.app.adapter
 
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
@@ -11,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.internal.LinkedTreeMap
 import com.xwray.groupie.ViewHolder
-import dev.alejo.fletxtest.app.iu.LocationActivity
+import dev.alejo.fletxtest.app.R
+import dev.alejo.fletxtest.app.view.LocationActivity
 import kotlinx.android.synthetic.main.item_vehicle.view.*
-import org.json.JSONObject
 
 class VehicleAdapter(
     private val context: Context,

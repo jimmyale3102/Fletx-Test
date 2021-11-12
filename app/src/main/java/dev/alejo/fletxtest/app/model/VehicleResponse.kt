@@ -1,4 +1,4 @@
-package dev.alejo.fletxtest.app
+package dev.alejo.fletxtest.app.model
 
 import com.google.gson.annotations.SerializedName
 import com.google.gson.internal.LinkedTreeMap

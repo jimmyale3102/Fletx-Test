@@ -1,5 +1,6 @@
-package dev.alejo.fletxtest.app
+package dev.alejo.fletxtest.app.network
 
+import dev.alejo.fletxtest.app.model.VehicleResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header

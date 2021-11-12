@@ -1,4 +1,4 @@
-package dev.alejo.fletxtest.app.iu
+package dev.alejo.fletxtest.app.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

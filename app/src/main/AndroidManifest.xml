@@ -20,12 +20,12 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".iu.LocationActivity"
+            android:name=".view.LocationActivity"
             android:exported="true"
             android:label="@string/title_activity_location"
-            android:parentActivityName=".iu.MainActivity"/>
+            android:parentActivityName=".view.MainActivity"/>
         <activity
-            android:name=".iu.MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
