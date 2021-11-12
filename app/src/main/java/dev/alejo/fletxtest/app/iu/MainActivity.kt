@@ -1,12 +1,14 @@
-package dev.alejo.fletxtest.app
+package dev.alejo.fletxtest.app.iu
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.internal.LinkedTreeMap
+import dev.alejo.fletxtest.app.APIService
+import dev.alejo.fletxtest.app.R
+import dev.alejo.fletxtest.app.VehicleAdapter
 import dev.alejo.fletxtest.app.extensions.toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
