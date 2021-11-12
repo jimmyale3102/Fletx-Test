@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.internal.LinkedTreeMap
 import kotlinx.android.synthetic.main.activity_main.*
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             val data = call.body()
             runOnUiThread {
                 if(call.isSuccessful) {
+                    loading.visibility = View.GONE
                     val vehiclesData = data?.data ?: emptyList()
                     vehicleList.clear()
                     vehicleList.addAll(vehiclesData)
