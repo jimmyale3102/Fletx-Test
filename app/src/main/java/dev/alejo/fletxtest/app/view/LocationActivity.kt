@@ -2,7 +2,6 @@ package dev.alejo.fletxtest.app.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -11,7 +10,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import dev.alejo.fletxtest.app.R
 import dev.alejo.fletxtest.app.databinding.ActivityLocationBinding
-import java.util.*
 
 class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
 

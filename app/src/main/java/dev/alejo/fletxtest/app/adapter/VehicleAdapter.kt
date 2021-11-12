@@ -3,7 +3,6 @@ package dev.alejo.fletxtest.app.adapter
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi

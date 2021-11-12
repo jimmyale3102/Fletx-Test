@@ -2,7 +2,6 @@ package dev.alejo.fletxtest.app.model
 
 import com.google.gson.annotations.SerializedName
 import com.google.gson.internal.LinkedTreeMap
-import java.util.*
 
 data class VehicleResponse(
     @SerializedName("data") var data: List<LinkedTreeMap<String, Any>>,
