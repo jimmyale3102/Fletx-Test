@@ -33,8 +33,11 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
         map = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        map.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        map.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val latitude = intent.getDoubleExtra("lat", -34.0)
+        val longitude = intent.getDoubleExtra("lng", 151.0)
+        val zoomLevel = 15f
+        val vehicleLocation = LatLng(latitude, longitude)
+        map.addMarker(MarkerOptions().position(vehicleLocation).title("Marker in Sydney"))
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(vehicleLocation, zoomLevel))
     }
 }

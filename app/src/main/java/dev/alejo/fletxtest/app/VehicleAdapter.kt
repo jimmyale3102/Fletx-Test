@@ -1,6 +1,7 @@
 package dev.alejo.fletxtest.app
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.internal.LinkedTreeMap
 import com.xwray.groupie.ViewHolder
+import dev.alejo.fletxtest.app.iu.LocationActivity
 import kotlinx.android.synthetic.main.item_vehicle.view.*
 import org.json.JSONObject
 
@@ -49,6 +51,12 @@ class VehicleAdapter(
             }
         } else {
             context.getString(R.string.no_trailer)
+        }
+        holder.itemView.vehicle_content.setOnClickListener {
+            context.startActivity(Intent(context, LocationActivity::class.java).apply {
+                putExtra("lat", 4.7434159)
+                putExtra("lng", -74.2690526)
+            })
         }
     }
 
