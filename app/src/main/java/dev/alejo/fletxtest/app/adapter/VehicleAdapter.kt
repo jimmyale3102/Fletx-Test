@@ -3,6 +3,7 @@ package dev.alejo.fletxtest.app.adapter
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
@@ -56,6 +57,7 @@ class VehicleAdapter(
         }
         holder.itemView.trailer.text = trailerPlate
         holder.itemView.vehicle_content.setOnClickListener {
+            val latLngPoint = item["lonlat"].toString().split("(")[1].split(")")[0]
             VehicleProvider.vehicleSelected = VehicleModel(
                 (item["front_vehicle"] as LinkedTreeMap<*, *>)["url"].toString(),
                 item["placa"].toString(),
@@ -65,8 +67,8 @@ class VehicleAdapter(
             )
             context.startActivity(Intent(context, LocationActivity::class.java).apply {
                 putExtra("plate", holder.itemView.plate.text.toString())
-                putExtra("lat", 4.7434159)
-                putExtra("lng", -74.2690526)
+                putExtra("lat", latLngPoint.split(" ")[1].toDouble())
+                putExtra("lng", latLngPoint.split(" ")[0].toDouble())
             })
         }
     }
